@@ -1,8 +1,9 @@
 //
-//  COSTouchVisualizer.h
-//  COSTouchVisualizer
+//  TouchVisualizer.h
+//  TouchVisualizer
 //
-//  Created by Jim Wang on 2025/7/29.
+//  Created by René Lindhorst on 25.02.16.
+//  Copyright © 2016 conopsys. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,5 +16,4 @@ FOUNDATION_EXPORT const unsigned char COSTouchVisualizerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <COSTouchVisualizer/PublicHeader.h>
 
-#import "COSTouchVisualizerWindow.h"
-#import "COSTouchConfig.h"
+#import <COSTouchVisualizer/COSTouchVisualizerWindow.h>

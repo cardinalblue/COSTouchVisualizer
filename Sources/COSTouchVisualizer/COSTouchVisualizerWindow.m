@@ -131,7 +131,7 @@ static const NSTimeInterval COSTouchVisualizerWindowRemoveDelay = 0.2;
                                 
                                 self.timer = [NSTimer scheduledTimerWithTimeInterval:0.6
                                                                               target:self
-                                                                            selector:@selector(performMorphWithTouchView:)
+                                                                            selector:@selector(performMorph:)
                                                                             userInfo:touchView
                                                                              repeats:YES];
                             }
@@ -277,7 +277,8 @@ static const NSTimeInterval COSTouchVisualizerWindowRemoveDelay = 0.2;
     return NO;
 }
 
-- (void)performMorphWithTouchView:(COSTouchImageView *)touchView {
+- (void)performMorph:(NSTimer *)timer {
+    COSTouchImageView *touchView = (COSTouchImageView *)timer.userInfo;
     NSTimeInterval duration = .4;
     NSTimeInterval delay = 0;
     // Start

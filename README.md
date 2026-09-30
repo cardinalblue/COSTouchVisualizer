@@ -120,14 +120,29 @@ only show fingertip when connected to a mirrored screen.
 
 ## Requirements
 
-This project requires ARC.
+This project requires iOS 16 or later and ARC.
 
 ## Installation
 
-COSTouchVisualizer is available through [CocoaPods](http://cocoapods.org), to install
-it simply add the following line to your Podfile:
+### Swift Package Manager
+
+In Xcode, select **File > Add Package Dependencies** and enter:
+
+    https://github.com/cardinalblue/COSTouchVisualizer.git
+
+Then add `COSTouchVisualizer` to your app target.
+
+### CocoaPods
+
+COSTouchVisualizer remains available through [CocoaPods](https://cocoapods.org). Add the following line to your Podfile:
 
     pod "COSTouchVisualizer"
+
+### Carthage
+
+Add the following line to your Cartfile:
+
+    github "cardinalblue/COSTouchVisualizer"
 
 ## Author
 

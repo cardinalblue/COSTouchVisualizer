@@ -61,8 +61,8 @@
 		E6F67FF618DE12B4001C954A /* TouchVisualizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchVisualizerTests-Info.plist"; sourceTree = "<group>"; };
 		E6F67FF818DE12B4001C954A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E6F67FFA18DE12B4001C954A /* TouchVisualizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchVisualizerTests.m; sourceTree = "<group>"; };
-		E6F6800418DE141D001C954A /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = COSTouchVisualizerWindow.h; path = ../Classes/COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
-		E6F6800518DE141D001C954A /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = COSTouchVisualizerWindow.m; path = ../Classes/COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
+		E6F6800418DE141D001C954A /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = COSTouchVisualizerWindow.h; path = ../Sources/COSTouchVisualizer/include/COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
+		E6F6800518DE141D001C954A /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = COSTouchVisualizerWindow.m; path = ../Sources/COSTouchVisualizer/COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
 		F2C0C844B7C63874B9E7BDB3 /* Pods-TouchVisualizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchVisualizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchVisualizer/Pods-TouchVisualizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

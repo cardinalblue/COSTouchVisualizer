@@ -16,7 +16,7 @@
 		E6C633AA1FD0FB9D000DA40C /* COSOverlayVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C633A81FD0FB9D000DA40C /* COSOverlayVisualizerWindow.m */; };
 		E6C633AD1FD0FC8E000DA40C /* COSTouchImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C633AB1FD0FC8E000DA40C /* COSTouchImageView.h */; };
 		E6C633AE1FD0FC8E000DA40C /* COSTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C633AC1FD0FC8E000DA40C /* COSTouchImageView.m */; };
-		E6C633B11FD2CCB2000DA40C /* COSTouchConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C633AF1FD2CCB2000DA40C /* COSTouchConfig.h */; };
+		E6C633B11FD2CCB2000DA40C /* COSTouchConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C633AF1FD2CCB2000DA40C /* COSTouchConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6C633B21FD2CCB2000DA40C /* COSTouchConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C633B01FD2CCB2000DA40C /* COSTouchConfig.m */; };
 		E6C633B51FD2D4FD000DA40C /* COSTouchImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C633B31FD2D4FD000DA40C /* COSTouchImageFactory.h */; };
 		E6C633B61FD2D4FD000DA40C /* COSTouchImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C633B41FD2D4FD000DA40C /* COSTouchImageFactory.m */; };
@@ -24,18 +24,18 @@
 
 /* Begin PBXFileReference section */
 		A71946A71C7EF890003B7C4A /* COSTouchVisualizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = COSTouchVisualizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A71946BD1C7EFB1F003B7C4A /* COSTouchVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSTouchVisualizer.h; sourceTree = "<group>"; };
-		A71946C11C7EFB1F003B7C4A /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
-		A71946C21C7EFB1F003B7C4A /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
+		A71946BD1C7EFB1F003B7C4A /* COSTouchVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ../Sources/COSTouchVisualizer/include/COSTouchVisualizer.h; sourceTree = "<group>"; };
+		A71946C11C7EFB1F003B7C4A /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ../Sources/COSTouchVisualizer/include/COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
+		A71946C21C7EFB1F003B7C4A /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ../Sources/COSTouchVisualizer/COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
 		A71946C31C7EFB1F003B7C4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6C633A71FD0FB9D000DA40C /* COSOverlayVisualizerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COSOverlayVisualizerWindow.h; sourceTree = "<group>"; };
-		E6C633A81FD0FB9D000DA40C /* COSOverlayVisualizerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COSOverlayVisualizerWindow.m; sourceTree = "<group>"; };
-		E6C633AB1FD0FC8E000DA40C /* COSTouchImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COSTouchImageView.h; sourceTree = "<group>"; };
-		E6C633AC1FD0FC8E000DA40C /* COSTouchImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COSTouchImageView.m; sourceTree = "<group>"; };
-		E6C633AF1FD2CCB2000DA40C /* COSTouchConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COSTouchConfig.h; sourceTree = "<group>"; };
-		E6C633B01FD2CCB2000DA40C /* COSTouchConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COSTouchConfig.m; sourceTree = "<group>"; };
-		E6C633B31FD2D4FD000DA40C /* COSTouchImageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COSTouchImageFactory.h; sourceTree = "<group>"; };
-		E6C633B41FD2D4FD000DA40C /* COSTouchImageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COSTouchImageFactory.m; sourceTree = "<group>"; };
+		E6C633A71FD0FB9D000DA40C /* COSOverlayVisualizerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../Sources/COSTouchVisualizer/COSOverlayVisualizerWindow.h; sourceTree = "<group>"; };
+		E6C633A81FD0FB9D000DA40C /* COSOverlayVisualizerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../Sources/COSTouchVisualizer/COSOverlayVisualizerWindow.m; sourceTree = "<group>"; };
+		E6C633AB1FD0FC8E000DA40C /* COSTouchImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../Sources/COSTouchVisualizer/COSTouchImageView.h; sourceTree = "<group>"; };
+		E6C633AC1FD0FC8E000DA40C /* COSTouchImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../Sources/COSTouchVisualizer/COSTouchImageView.m; sourceTree = "<group>"; };
+		E6C633AF1FD2CCB2000DA40C /* COSTouchConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../Sources/COSTouchVisualizer/include/COSTouchConfig.h; sourceTree = "<group>"; };
+		E6C633B01FD2CCB2000DA40C /* COSTouchConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../Sources/COSTouchVisualizer/COSTouchConfig.m; sourceTree = "<group>"; };
+		E6C633B31FD2D4FD000DA40C /* COSTouchImageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../Sources/COSTouchVisualizer/COSTouchImageFactory.h; sourceTree = "<group>"; };
+		E6C633B41FD2D4FD000DA40C /* COSTouchImageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../Sources/COSTouchVisualizer/COSTouchImageFactory.m; sourceTree = "<group>"; };
 		E6F67FCC18DE12B4001C954A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6F67FD018DE12B4001C954A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -209,7 +209,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conopsys.TouchVisualizer;
@@ -236,7 +236,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conopsys.TouchVisualizer;

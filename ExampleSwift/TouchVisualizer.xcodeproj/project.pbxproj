@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E367FB6E6C95861F08193CDD /* Pods_TouchVisualizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722C6B75F43A050C04DC95BE /* Pods_TouchVisualizer.framework */; };
+		CB0000010000000000000001 /* COSTouchVisualizer in Frameworks */ = {isa = PBXBuildFile; productRef = CB0000030000000000000003 /* COSTouchVisualizer */; };
 		EDE2852D1B0AD212003CE61C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2852C1B0AD212003CE61C /* AppDelegate.swift */; };
 		EDE2852F1B0AD212003CE61C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2852E1B0AD212003CE61C /* MasterViewController.swift */; };
 		EDE285311B0AD212003CE61C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE285301B0AD212003CE61C /* DetailViewController.swift */; };
@@ -28,10 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2083F4F7F0D125488876BD65 /* Pods-TouchVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchVisualizer/Pods-TouchVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
-		692C5A73FFA5073B9F8A428A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		722C6B75F43A050C04DC95BE /* Pods_TouchVisualizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchVisualizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		889BE90D3C110891ABA6720E /* Pods-TouchVisualizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchVisualizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchVisualizer/Pods-TouchVisualizer.release.xcconfig"; sourceTree = "<group>"; };
 		EDE285271B0AD212003CE61C /* TouchVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE2852B1B0AD212003CE61C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDE2852C1B0AD212003CE61C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E367FB6E6C95861F08193CDD /* Pods_TouchVisualizer.framework in Frameworks */,
+				CB0000010000000000000001 /* COSTouchVisualizer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,32 +60,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0270693985C161FC7D9CD410 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2083F4F7F0D125488876BD65 /* Pods-TouchVisualizer.debug.xcconfig */,
-				889BE90D3C110891ABA6720E /* Pods-TouchVisualizer.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		81A7636BA9229631986F594A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				692C5A73FFA5073B9F8A428A /* Pods.framework */,
-				722C6B75F43A050C04DC95BE /* Pods_TouchVisualizer.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		EDE2851E1B0AD212003CE61C = {
 			isa = PBXGroup;
 			children = (
 				EDE285291B0AD212003CE61C /* TouchVisualizer */,
 				EDE285411B0AD212003CE61C /* TouchVisualizerTests */,
 				EDE285281B0AD212003CE61C /* Products */,
-				81A7636BA9229631986F594A /* Frameworks */,
-				0270693985C161FC7D9CD410 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,18 +124,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDE285481B0AD212003CE61C /* Build configuration list for PBXNativeTarget "TouchVisualizer" */;
 			buildPhases = (
-				5D936C3EE9A79ADB16541756 /* [CP] Check Pods Manifest.lock */,
 				EDE285231B0AD212003CE61C /* Sources */,
 				EDE285241B0AD212003CE61C /* Frameworks */,
 				EDE285251B0AD212003CE61C /* Resources */,
-				6A6C8F5202B9B365F96AEAED /* [CP] Embed Pods Frameworks */,
-				4449974F51F5CC2B2C1767C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TouchVisualizer;
+			packageProductDependencies = (
+				CB0000030000000000000003 /* COSTouchVisualizer */,
+			);
 			productName = TouchVisualizer;
 			productReference = EDE285271B0AD212003CE61C /* TouchVisualizer.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +188,9 @@
 				Base,
 			);
 			mainGroup = EDE2851E1B0AD212003CE61C;
+			packageReferences = (
+				CB0000020000000000000002 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = EDE285281B0AD212003CE61C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,54 +220,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4449974F51F5CC2B2C1767C3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchVisualizer/Pods-TouchVisualizer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5D936C3EE9A79ADB16541756 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6A6C8F5202B9B365F96AEAED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchVisualizer/Pods-TouchVisualizer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDE285231B0AD212003CE61C /* Sources */ = {
@@ -378,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -428,7 +359,6 @@
 		};
 		EDE285491B0AD212003CE61C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2083F4F7F0D125488876BD65 /* Pods-TouchVisualizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K78G42H4U2;
@@ -436,13 +366,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conopsys.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		EDE2854A1B0AD212003CE61C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 889BE90D3C110891ABA6720E /* Pods-TouchVisualizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K78G42H4U2;
@@ -450,7 +379,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conopsys.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -470,7 +399,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conopsys.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchVisualizer.app/TouchVisualizer";
 			};
 			name = Debug;
@@ -487,7 +416,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conopsys.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchVisualizer.app/TouchVisualizer";
 			};
 			name = Release;
@@ -523,6 +452,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CB0000020000000000000002 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB0000030000000000000003 /* COSTouchVisualizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB0000020000000000000002 /* XCLocalSwiftPackageReference ".." */;
+			productName = COSTouchVisualizer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDE2851F1B0AD212003CE61C /* Project object */;
 }

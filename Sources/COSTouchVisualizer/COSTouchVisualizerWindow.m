@@ -14,10 +14,15 @@
 
 static const NSTimeInterval COSTouchVisualizerWindowRemoveDelay = 0.2;
 
+@interface COSOverlayVisualizerWindow (Geometry)
+
+- (void)cos_updateGeometry;
+
+@end
+
 @interface COSTouchVisualizerWindow ()
 
 @property (nonatomic) UIWindow *overlayWindow;
-@property (nonatomic) UIViewController *overlayWindowViewController;
 @property (nonatomic) BOOL fingerTipRemovalScheduled;
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSSet *allTouches;
@@ -39,12 +44,47 @@ static const NSTimeInterval COSTouchVisualizerWindowRemoveDelay = 0.2;
                  rippleConfig:(COSTouchConfig *)rippleConfig {
     self = [super initWithFrame:frame];
     if (self) {
-        _morphEnabled = morphEnabled;
-        _touchVisibility = touchVisibility;
-        _touchContactConfig = contactConfig ?: [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeContact];
-        _touchRippleConfig = rippleConfig ?: [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeRipple];
+        [self cos_commonInitWithMorphEnabled:morphEnabled touchVisibility:touchVisibility contactConfig:contactConfig rippleConfig:rippleConfig];
     }
     return self;
+}
+
+- (instancetype)initWithWindowScene:(UIWindowScene *)windowScene
+                       morphEnabled:(BOOL)morphEnabled
+                    touchVisibility:(COSTouchVisualizerWindowTouchVisibility)touchVisibility
+                      contactConfig:(COSTouchConfig *)contactConfig
+                       rippleConfig:(COSTouchConfig *)rippleConfig {
+    self = [super initWithWindowScene:windowScene];
+    if (self) {
+        [self cos_commonInitWithMorphEnabled:morphEnabled touchVisibility:touchVisibility contactConfig:contactConfig rippleConfig:rippleConfig];
+    }
+    return self;
+}
+
+- (instancetype)initWithWindowScene:(UIWindowScene *)windowScene {
+    return [self initWithWindowScene:windowScene
+                        morphEnabled:YES
+                     touchVisibility:COSTouchVisualizerWindowTouchVisibilityRemoteAndLocal
+                       contactConfig:nil
+                        rippleConfig:nil];
+}
+
+- (void)cos_commonInitWithMorphEnabled:(BOOL)morphEnabled
+                       touchVisibility:(COSTouchVisualizerWindowTouchVisibility)touchVisibility
+                         contactConfig:(COSTouchConfig *)contactConfig
+                          rippleConfig:(COSTouchConfig *)rippleConfig {
+    _morphEnabled = morphEnabled;
+    _touchVisibility = touchVisibility;
+    _touchContactConfig = contactConfig ?: [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeContact];
+    _touchRippleConfig = rippleConfig ?: [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeRipple];
+}
+
+#pragma mark - Scene / Resize
+
+// Keep the overlay in the same scene as this window, even when the scene is assigned or changed after init.
+- (void)setWindowScene:(UIWindowScene *)windowScene {
+    [super setWindowScene:windowScene];
+    _overlayWindow.windowScene = windowScene;
 }
 
 #pragma mark - Touch / Ripple and Images
@@ -89,6 +129,7 @@ static const NSTimeInterval COSTouchVisualizerWindowRemoveDelay = 0.2;
             
         case COSTouchVisualizerWindowTouchVisibilityRemoteOnly:
         case COSTouchVisualizerWindowTouchVisibilityRemoteAndLocal: {
+            [(COSOverlayVisualizerWindow *)self.overlayWindow cos_updateGeometry];
             self.allTouches = [event allTouches];
             for (UITouch *touch in [self.allTouches allObjects]) {
                 switch (touch.phase) {
@@ -164,7 +205,9 @@ static const NSTimeInterval COSTouchVisualizerWindowRemoveDelay = 0.2;
 
 - (UIWindow *)overlayWindow {
     if (!_overlayWindow) {
-        _overlayWindow = [[COSOverlayVisualizerWindow alloc] initWithFrame:self.frame];
+        _overlayWindow = self.windowScene
+            ? [[COSOverlayVisualizerWindow alloc] initWithWindowScene:self.windowScene]
+            : [[COSOverlayVisualizerWindow alloc] initWithFrame:self.frame];
         _overlayWindow.userInteractionEnabled = NO;
         _overlayWindow.windowLevel = UIWindowLevelStatusBar;
         _overlayWindow.backgroundColor = [UIColor clearColor];

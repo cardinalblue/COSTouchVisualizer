@@ -5,6 +5,24 @@
 [![Version](http://cocoapod-badges.herokuapp.com/v/COSTouchVisualizer/badge.png)](http://cocoadocs.org/docsets/COSTouchVisualizer)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/COSTouchVisualizer/badge.png)](http://cocoadocs.org/docsets/COSTouchVisualizer)
 
+## Scene-based Usage (UIScene lifecycle)
+
+Create the window for the connecting scene. The touch overlay joins the same scene and follows every resize (rotation, Split View, display changes).
+
+```swift
+func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {
+    guard let windowScene = scene as? UIWindowScene else { return }
+    let window = COSTouchVisualizerWindow(windowScene: windowScene,
+                                          morphEnabled: true,
+                                          touchVisibility: .remoteAndLocal,
+                                          contactConfig: nil,
+                                          rippleConfig: nil)
+    window.rootViewController = RootViewController()
+    self.window = window
+    window.makeKeyAndVisible()
+}
+```
+
 ## Swift Usage
 
 Using COSTouchVisualizer is possible with Swift.  Inside your AppDelegate, redefine your window and declare a visualizer window with storyboards.

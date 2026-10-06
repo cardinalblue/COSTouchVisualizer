@@ -28,7 +28,13 @@ typedef NS_ENUM(NSUInteger, COSTouchVisualizerWindowTouchVisibility) {
                           touchVisibility:(COSTouchVisualizerWindowTouchVisibility)touchVisibility
                        contactConfig:(nullable COSTouchConfig*)contactConfig
                         rippleConfig:(nullable COSTouchConfig*)rippleConfig NS_DESIGNATED_INITIALIZER;
+-(nonnull instancetype)initWithWindowScene:(nonnull UIWindowScene *)windowScene
+                              morphEnabled:(BOOL)morphEnabled
+                           touchVisibility:(COSTouchVisualizerWindowTouchVisibility)touchVisibility
+                             contactConfig:(nullable COSTouchConfig*)contactConfig
+                              rippleConfig:(nullable COSTouchConfig*)rippleConfig NS_DESIGNATED_INITIALIZER;
 -(nonnull instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+-(nonnull instancetype)initWithWindowScene:(nonnull UIWindowScene *)windowScene NS_UNAVAILABLE;
 -(nonnull instancetype)init NS_UNAVAILABLE;
 -(nonnull instancetype)initWithCoder:(nonnull NSCoder *)aDecoder NS_UNAVAILABLE;
 

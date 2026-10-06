@@ -10,9 +10,15 @@ import UIKit
 import COSTouchVisualizer
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {}
 
-    internal var window: UIWindow? = {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var window: UIWindow?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+
         let contactConfig = COSTouchConfig(touchConfigType: .contact)
         contactConfig.fillColor = .purple
         contactConfig.strokeColor = .blue
@@ -23,19 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rippleConfig.strokeColor = .blue
         rippleConfig.alpha = 0.1
 
-        return COSTouchVisualizerWindow(
-            frame: UIScreen.main.bounds,
+        // .remoteAndLocal shows fingertips even without a mirrored screen.
+        let window = COSTouchVisualizerWindow(
+            windowScene: windowScene,
             morphEnabled: true,
             touchVisibility: .remoteAndLocal,
             contactConfig: contactConfig,
             rippleConfig: rippleConfig
         )
-    }()
-
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-    ) -> Bool {
-        return true
+        window.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        self.window = window
+        window.makeKeyAndVisible()
     }
 }

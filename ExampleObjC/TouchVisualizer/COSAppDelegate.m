@@ -28,7 +28,7 @@
             config;
         });
         
-        COSTouchConfig *riippleConfig = ({
+        COSTouchConfig *rippleConfig = ({
             COSTouchConfig *config = [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeRipple];
             config.fillColor = [UIColor purpleColor];
             config.strokeColor = [UIColor blueColor];
@@ -40,7 +40,7 @@
                                                           morphEnabled:YES
                                                        touchVisibility:COSTouchVisualizerWindowTouchVisibilityRemoteAndLocal
                                                          contactConfig:contactConfig
-                                                          rippleConfig:riippleConfig];
+                                                          rippleConfig:rippleConfig];
     }
     return customWindow;
 }

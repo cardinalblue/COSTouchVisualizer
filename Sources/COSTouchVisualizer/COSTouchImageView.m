@@ -1,5 +1,5 @@
 //
-//  COSTouchSpotView.m
+//  COSTouchImageView.m
 //  COSTouchVisualizer
 //
 //  Created by Joseph Blau on 11/30/17.

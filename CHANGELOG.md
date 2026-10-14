@@ -1,5 +1,10 @@
 # COSTouchVisualizer CHANGELOG
 
+## 1.0.6
+- Added Universal Storyboards
+- Fixed bug with Statusbar
+- Fixed bug where long press gesture morph would stay on screen during segues
+
 ## 1.0.4
 
 - Made iPad-compat

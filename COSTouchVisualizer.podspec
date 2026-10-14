@@ -18,12 +18,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/conopsys/COSTouchVisualizer.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/joe_blau'
 
-  s.platform     = :ios, '6.0'
+  s.platform     = :ios, '16.0'
 
   s.requires_arc = true
 
-  s.source_files = 'Classes'
-
-  s.ios.exclude_files = 'Classes/osx'
-  s.osx.exclude_files = 'Classes/ios'
+  s.source_files = 'Sources/COSTouchVisualizer/**/*.{h,m}'
+  s.public_header_files = 'Sources/COSTouchVisualizer/include/*.h'
+  s.private_header_files = 'Sources/COSTouchVisualizer/*.h'
 end

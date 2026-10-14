@@ -16,3 +16,4 @@ FOUNDATION_EXPORT const unsigned char COSTouchVisualizerVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <COSTouchVisualizer/PublicHeader.h>
 
 #import "COSTouchVisualizerWindow.h"
+#import "COSTouchConfig.h"

@@ -7,124 +7,97 @@
 
 ## Swift Usage
 
-Using COSTouchVisualizer is possible with Swift.  Inside your AppDelegate, redefine your window and declare a visualizer window with storyboards.
+Create the visualizer window with its designated initializer. Passing `nil` for either configuration uses the default appearance.
 
-**With Storyboards**
 ```swift
-class AppDelegate: UIResponder {
-  lazy var window: COSTouchVisualizerWindow? = {
-    COSTouchVisualizerWindow(frame: UIScreen.mainScreen().bounds)
-  }()
-...
+import COSTouchVisualizer
+import UIKit
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow? = COSTouchVisualizerWindow(
+        frame: UIScreen.main.bounds,
+        morphEnabled: true,
+        touchVisibility: .remoteAndLocal,
+        contactConfig: nil,
+        rippleConfig: nil
+    )
 }
 ```
-**Without Storyboards**
 
 ## Objective-C Usage
 
-To run the example project; clone the repo, and run `pod update` from the Example directory first.  By default, this project has `Debug Mode` disabled.  If you want to see the gestures while you're testing, follow the **Debugging Mode** instructions.
-
-**With Storyboards**
- in your `AppDelegate` implementation simply add the following getter
+Create the window programmatically in the app delegate, including when the app's view controllers are loaded from a storyboard. The plain `init`, `initWithFrame:`, and `initWithCoder:` initializers are unavailable.
 
 ```objective-c
 #import <COSTouchVisualizerWindow.h>
 
-...
-
-// Add this method to your AppDelegate method
 - (COSTouchVisualizerWindow *)window {
-    static COSTouchVisualizerWindow *visWindow = nil;
-    if (!visWindow) visWindow = [[COSTouchVisualizerWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    return visWindow;
+    static COSTouchVisualizerWindow *customWindow = nil;
+    if (!customWindow) {
+        customWindow = [[COSTouchVisualizerWindow alloc]
+            initWithFrame:UIScreen.mainScreen.bounds
+            morphEnabled:YES
+            touchVisibility:COSTouchVisualizerWindowTouchVisibilityRemoteAndLocal
+            contactConfig:nil
+            rippleConfig:nil];
+    }
+    return customWindow;
 }
 ```
 
-**Without Storyboards**
-```objective-c
-#import <COSTouchVisualizerWindow.h>
+### Customization
 
-...
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Setup window
-    self.window = [[COSTouchVisualizerWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-
-    ...
-
-}
-```
-
-**Delegate**
-
-To make the window change active status dynamically or to enable debugging mode, you could make an object
-implements the ```COSTouchVisualizerWindowDelegate``` protocol.
-
-Here are 2 optional methods in this delegate protocol:
-```objective-c
-- (BOOL)touchVisualizerWindowShouldShowFingertip:(COSTouchVisualizerWindow *)window;
-- (BOOL)touchVisualizerWindowShouldAlwaysShowFingertip:(COSTouchVisualizerWindow *)window;
-```
-
-By default, the window only shows fingertip when there is a mirrored window.
-
-The first delegate method (```-touchVisualizerWindowShouldShowFingertip:```) tells the window to enable
-fingertip or not. You should return ```YES``` to enable the fingertip feature, or ```NO``` if you want to close this
-feature.
-
-The second method (```-touchVisualizerWindowShouldAlwaysShowFingertip:```) tells the window to always show the
-fingertip even if there's no any mirrored screens (when returning YES). If this method returns NO, the window
-only show fingertip when connected to a mirrored screen.
+Configure the contact and ripple appearance before creating the window:
 
 ```objective-c
-- (COSTouchVisualizerWindow *)window {
-  if (!_customWindow) {
-    _customWindow = [[COSTouchVisualizerWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#import <COSTouchConfig.h>
 
-    // ... other setup code
+COSTouchConfig *contactConfig =
+    [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeContact];
+contactConfig.fillColor = UIColor.yellowColor;
+contactConfig.strokeColor = UIColor.purpleColor;
+contactConfig.alpha = 0.4;
 
-    _customWindow.touchVisualizerWindowDelegate = self;
-  }
-  return _customWindow;
-}
+COSTouchConfig *rippleConfig =
+    [[COSTouchConfig alloc] initWithTouchConfigType:COSTouchConfigTpyeRipple];
+rippleConfig.fillColor = UIColor.yellowColor;
+rippleConfig.strokeColor = UIColor.purpleColor;
+rippleConfig.alpha = 0.1;
 
-- (BOOL)touchVisualizerWindowShouldAlwaysShowFingertip:(COSTouchVisualizerWindow *)window {
-    return YES;  // Return YES to make the fingertip always display even if there's no any mirrored screen.
-                 // Return NO or don't implement this method if you want to keep the fingertip display only when
-                 // the device is connected to a mirrored screen.
-}
-
-- (BOOL)touchVisualizerWindowShouldShowFingertip:(COSTouchVisualizerWindow *)window {
-    return YES;  // Return YES or don't implement this method to make this window show fingertip when necessary.
-                 // Return NO to make this window not to show fingertip.
-}
-```
-
-**Customization**
-
-```objective-c
-// Add these lines after the windows is initialized
-// Touch Color
-[visWindow setFillColor:[UIColor yellowColor]];
-[visWindow setStrokeColor:[UIColor purpleColor]];
-[visWindow setTouchAlpha:0.4];
-// Ripple Color
-[visWindow setRippleFillColor:[UIColor yellowColor]];
-[visWindow setRippleStrokeColor:[UIColor purpleColor]];
-[visWindow setRippleAlpha:0.1];
+COSTouchVisualizerWindow *window = [[COSTouchVisualizerWindow alloc]
+    initWithFrame:UIScreen.mainScreen.bounds
+    morphEnabled:YES
+    touchVisibility:COSTouchVisualizerWindowTouchVisibilityRemoteAndLocal
+    contactConfig:contactConfig
+    rippleConfig:rippleConfig];
 ```
 
 ## Requirements
 
-This project requires ARC.
+This project requires iOS 16 or later and ARC.
 
 ## Installation
 
-COSTouchVisualizer is available through [CocoaPods](http://cocoapods.org), to install
-it simply add the following line to your Podfile:
+### Swift Package Manager
+
+In Xcode, select **File > Add Package Dependencies** and enter:
+
+    https://github.com/cardinalblue/COSTouchVisualizer.git
+
+Then add `COSTouchVisualizer` to your app target.
+
+### CocoaPods
+
+COSTouchVisualizer remains available through [CocoaPods](https://cocoapods.org). Add the following line to your Podfile:
 
     pod "COSTouchVisualizer"
+
+### Carthage
+
+Add the following line to your Cartfile:
+
+    github "cardinalblue/COSTouchVisualizer"
 
 ## Author
 
